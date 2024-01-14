@@ -1,4 +1,5 @@
 <?php
 
-$bigData = [1,2,2,3];
-echo $bigData;
+$bigData = [1,2,"dd",3];
+
+echo $bigData ;
