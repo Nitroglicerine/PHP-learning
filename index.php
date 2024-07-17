@@ -306,7 +306,8 @@ $cars_for_search_in_customer = [
     ["price" => 50000, "condition" => "new",],];
 
 function car_value_search($magazine, $customer)
-{$result_array = [];
+{
+    $result_array = [];
 
     foreach ($customer as $key => $value) {
         $customer_price = $customer[$key]['price'];
@@ -331,7 +332,12 @@ function car_value_search($magazine, $customer)
                     if ($customer[$key]["condition"] == $magazine[$key1]["condition"]) {
 
                         if ($customer[$key]["driving"] == $magazine[$key1]["driving"]) {
-                            array_push($result_array, $costumer_value_price);}}}}}
+                            array_push($result_array, $costumer_value_price);
+                        }
+                    }
+                }
+            }
+        }
     }
     return $result_array;
 }
@@ -339,22 +345,46 @@ function car_value_search($magazine, $customer)
 //print_r(car_value_search($cars_in_magazine, $cars_for_search_in_customer));
 
 
-function car_value_search1($magazine, $customer)
-{$result_array = [];
+//function car_value_search1($magazine, $customer)
+//{$result_array = [];
+//
+//    foreach ($customer as $key => $value) {
+//        $customer_price = $customer[$key]['price'];
+//
+//        foreach ($magazine as $key1 => $value1) {
+//
+//            foreach ($value as $key2 => $value2) {
+//          foreach($value1 as $key3 => $value3) {
+//
+//          }
+//
+//            }
+//            }
+//    }
+//    return $key3;
+//}
+//print_r(car_value_search1($cars_in_magazine,$cars_for_search_in_customer));
 
-    foreach ($customer as $key => $value) {
-        $customer_price = $customer[$key]['price'];
+$str_count = "qwertyqxnn";
+function counter($str)
+{
+    $array_repeat_counter = [];
+    $array_value_str = str_split($str);
 
-        foreach ($magazine as $key1 => $value1) {
-
-            foreach ($value as $key2 => $value2) {
-          foreach($value1 as $key3 => $value3) {
-
-          }
-
-            }
-            }
+    for ($i = 0; $i < strlen($str); $i++) {
+        array_push($array_repeat_counter, substr_count($str, $str[$i]));
     }
-    return $key3;
+    $result_arr = array_combine($array_value_str, $array_repeat_counter);
+
+    foreach ($result_arr as $key => $value) {
+        if ($value == 1) {
+            unset($result_arr[$key]);
+        }
+
+    }
+
+    return $result_arr;
 }
-print_r(car_value_search1($cars_in_magazine,$cars_for_search_in_customer));
+
+;
+//print_r(counter($str_count));
