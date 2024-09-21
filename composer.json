@@ -1,0 +1,19 @@
+{
+  "name": "molfar/php_learning",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "molfar-kuzhegetovich",
+      "email": "oleg14myhailenlo@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "php-learning\\": "php_learning"
+    }
+  }
+
+}

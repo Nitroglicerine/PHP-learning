@@ -1,7 +1,6 @@
 <?php
 error_reporting(-1);
 
-
 //define("ficl","back");
 //
 //$bddas = match (ficl){
@@ -388,3 +387,74 @@ function counter($str)
 
 ;
 //print_r(counter($str_count));
+
+$tv_chanels_array = ["BBC1", "Abc", "BBC2", "MTV"];
+
+function tv_chanels($chanels_array)
+{
+    $result_array = [];
+    $result_array1 = [];
+    natcasesort($chanels_array);
+
+    foreach ($chanels_array as $key => $value) {
+        array_push($result_array, $value);
+    }
+    $sort_doubles= array_unique($result_array);
+
+    foreach ($sort_doubles as $key => $value) {
+        array_push($result_array1, $key . " chanel", $value);
+
+    }
+    return $result_array1;
+}
+
+//print_r(tv_chanels($tv_chanels_array));
+
+
+class Bnttx
+{
+    public $gggt = true;
+    public $qwdf = "qwerrtys";
+    public $bfft = null;
+   public function __construct($qwdf,$bfft,$gggt)
+   { $this->$bfft = $bfft;
+       $this->$qwdf = $qwdf;
+       $this->$gggt = $gggt;
+   }
+};
+$xtrm = new Bnttx("fgw",false,12345);
+
+require_once "Interf.php";
+class Car implements Interf
+{
+    public $year ;
+    public $model ;
+
+    public $condition ;
+    public static $qbase =0;
+    function __construct($year,$model,$condition){
+        $this->year = $year;
+        $this->model = $model;
+        $this->condition = $condition;
+self::$qbase ++;
+    }
+     static public function qwertyss()
+     {
+         return self::$qbase;
+     }
+     public function xbtt($gvg)
+     {
+         // TODO: Implement xbtt() method.
+         return 1;
+     }
+     public function qwertys($gfg)
+     {
+        return $gfg++;
+     }
+
+
+}
+$car_price = new Car(1984,"tesla","used");
+$car_big_price = new Car(2011,"mazda","used");
+var_dump($car_price::$qbase);
+var_dump(Car::qwertyss());
